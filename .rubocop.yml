@@ -1,0 +1,14 @@
+# inherit_from: .rubocop_todo.yml
+
+AllCops:
+  Exclude:
+    - Rakefile
+    - 'vendor/**/*'
+    - '*.gemspec'
+    - 'bin/**/*'
+
+Metrics/LineLength:
+  Max: 120
+
+Style/Documentation:
+  Enabled: false
