@@ -1,5 +1,5 @@
 module ActiveModelReactProps
-  def self.props_for(object, **options)
+  def props_for(object, **options)
     if object.is_a?(Enumerable)
       object.map { |obj| render_json_partial(obj, **options) }
     else
@@ -9,7 +9,7 @@ module ActiveModelReactProps
     end
   end
 
-  def self.errors_for(model)
+  def errors_for(model)
     model.errors.map do |attribute, message|
       { attribute: attribute, message: message }
     end
