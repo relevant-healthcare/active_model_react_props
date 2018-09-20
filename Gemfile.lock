@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     active_model_react_props (0.1.0)
-      rails (~> 5.0.0)
+      rails (= 5.0.7)
 
 GEM
   remote: https://rubygems.org/
