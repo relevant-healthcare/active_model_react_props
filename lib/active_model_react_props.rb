@@ -1,7 +1,7 @@
 module ActiveModelReactProps
   def props_for(object, **options)
-    if object.is_a?(Enumerable)
-      object.map { |obj| render_json_partial(obj, **options) }
+    if object.respond_to?(:map)
+      object.map { |obj| props_for(obj, **options) }
     else
       JbuilderTemplate.new(self) do |json|
         json.partial! partial: object, formats: [:json], **options
