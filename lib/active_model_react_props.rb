@@ -5,8 +5,8 @@ module ActiveModelReactProps
     end.attributes!
   end
 
-  def props_for_collection(object, **options)
-    object.map { |obj| props_for(obj, **options) }
+  def props_for_collection(objects, **options)
+    objects.map { |obj| props_for(obj, **options) }
   end
 
   def errors_for(model)
