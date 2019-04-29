@@ -1,12 +1,12 @@
 module ActiveModelReactProps
   def props_for(object, **options)
-    if object.respond_to?(:map)
-      object.map { |obj| props_for(obj, **options) }
-    else
-      JbuilderTemplate.new(self) do |json|
-        json.partial! partial: object, formats: [:json], **options
-      end.attributes!
-    end
+    JbuilderTemplate.new(self) do |json|
+      json.partial! partial: object, formats: [:json], **options
+    end.attributes!
+  end
+
+  def props_for_collection(object, **options)
+    object.map { |obj| props_for(obj, **options) }
   end
 
   def errors_for(model)
